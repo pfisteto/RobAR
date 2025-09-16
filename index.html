@@ -3,56 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <title>RobAR - User-Centered Robot Programming with Mixed Reality</title>
+    
     <style>
-        /* Dark Mode Styles */
         body { 
-            font-family: sans-serif; 
-            line-height: 1.6; 
+            font-family: 'Roboto', sans-serif; /* Use the new font */
+            line-height: 1.7; 
             max-width: 800px; 
             margin: 40px auto; 
             padding: 20px; 
-            background-color: #1e1e1e; /* Dark background */
-            color: #e0e0e0; /* Light grey text */
+            background-color: #121212; /* Slightly darker background */
+            color: #e0e0e0; 
         }
-        h1, h2 { 
-            color: #ffffff; /* White headings for emphasis */
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
         }
+
+        h1 { 
+            color: #ffffff;
+            font-weight: 700; /* Bolder title */
+            margin-bottom: 8px;
+        }
+
+        h2 { 
+            color: #ffffff; 
+            font-weight: 400;
+            border-bottom: 1px solid #444; /* Underline for section titles */
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
         a { 
-            color: #64b5f6; /* Light blue links */
+            color: #64b5f6; 
             text-decoration: none; 
+            transition: color 0.2s ease-in-out; /* Smooth transition on hover */
         }
-        a:hover { 
-            text-decoration: underline; 
-        }
+        
         ul { 
             list-style-type: none; 
             padding: 0; 
         }
-        li { 
-            margin-bottom: 10px; 
+
+        /* Styling for the resource links */
+        li a {
+            display: block;
+            padding: 15px;
+            background-color: #2a2a2a; /* Card background for links */
+            border-radius: 8px; /* Rounded corners */
+            margin-bottom: 10px;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
         }
+
+        li a:hover { 
+            background-color: #383838; /* Darker background on hover */
+            transform: translateY(-2px); /* Slight lift effect on hover */
+            color: #82c8ff; /* Brighter link color on hover */
+            text-decoration: none;
+        }
+        
+        .contact-list li a {
+            background-color: transparent; /* Remove card style for contact links */
+            padding: 5px 0;
+        }
+        
+        .contact-list li a:hover {
+            background-color: transparent;
+            transform: none;
+            text-decoration: underline;
+        }
+        
     </style>
 </head>
 <body>
-    <h1>RobAR - User-Centered Robot Programming with Mixed Reality</h1>
-    <p>Thank you for visiting! Here are some supplementary materials for my poster.</p>
-
+    <div class="header">
+        <h1>RobAR - User-Centered Robot Programming with Mixed Reality</h1>
+        <p>Thank you for visiting! Here are the supplementary materials for my poster.</p>
+    </div>
 
     <h2>🎥 Videos & Demos</h2>
     <ul>
-        <li><a href="https://youtu.be/GiMknJbRXQQ">Video</a></li>
+        <li><a href="https://youtu.be/GiMknJbRXQQ" target="_blank">Watch the Video Demonstration</a></li>
     </ul>
     
     <h2>📝 Papers & Preprints</h2>
     <ul>
-        <li><a href="https://doi.org/10.18420/muc2025-mci-ws15-327" target="_blank">Towards Mixed-Reality-Based Robot Programming for a Welding Use Case</a></li>
-        </ul>
+        <li><a href="https://doi.org/10.18420/muc2025-mci-ws15-327" target="_blank">Towards Mixed-Reality-Based Robot Programming for a Welding Use Case - Mensch und Computer 2025 - Chemnitz</a></li>
+    </ul>
 
     <h2>📧 Contact</h2>
-    <p>For questions, please reach out: </p>
-    <ul>
-        <li><a href="mailto:tom.pfister@thws.de">tom.pfister@thws.de</a>
+    <ul class="contact-list"> <li><a href="mailto:tom.pfister@thws.de">Email: tom.pfister@thws.de</a></li>
         <li><a href="https://www.linkedin.com/in/tom-pfister-b4258a197/" target="_blank">LinkedIn</a></li>
         <li><a href="https://robotik.thws.de/" target="_blank">Robotik@THWS</a></li>
     </ul>
