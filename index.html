@@ -67,12 +67,13 @@
             text-decoration: none;
         }
         
-        .contact-list li a {
-            background-color: transparent; /* Remove card style for contact links */
+        .contact-list li a, .partner-list li a {
+            background-color: transparent; /* Remove card style for contact and partner links */
             padding: 5px 0;
+            margin-bottom: 0;
         }
         
-        .contact-list li a:hover {
+        .contact-list li a:hover, .partner-list li a:hover {
             background-color: transparent;
             transform: none;
             text-decoration: underline;
@@ -83,7 +84,7 @@
 <body>
     <div class="header">
         <h1>RobAR - User-Centered Robot Programming with Mixed Reality</h1>
-        <p>Thank you for visiting! Here are some supplementary materials for my poster.</p>
+        <p>Thank you for visiting! Find here some supplementary material.</p>
     </div>
 
     <h2>🎥 Videos & Demos</h2>
@@ -96,8 +97,14 @@
         <li><a href="https://doi.org/10.18420/muc2025-mci-ws15-327" target="_blank">🧾Towards Mixed-Reality-Based Robot Programming for a Welding Use Case - Mensch und Computer 2025 - Chemnitz</a></li>
     </ul>
 
+    <h2>🤝 Project Partner</h2>
+    <ul class="partner-list">
+        <li><a href="https://www.alpaka-innovation.de/produkte/schweisscobot/" target="_blank">🦙 Alpaka Innovation</a></li>
+    </ul>
+
     <h2>📧 Contact</h2>
-    <ul class="contact-list"> <li><a href="mailto:tom.pfister@thws.de">📧 tom.pfister@thws.de</a></li>
+    <ul class="contact-list">
+        <li><a href="mailto:tom.pfister@thws.de">📧 tom.pfister@thws.de</a></li>
         <li><a href="https://www.linkedin.com/in/tom-pfister-b4258a197/" target="_blank">🌐LinkedIn</a></li>
         <li><a href="https://robotik.thws.de/" target="_blank">🤖Robotik@THWS</a></li>
     </ul>
