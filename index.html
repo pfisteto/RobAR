@@ -1,115 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    
-    <title>RobAR - User-Centered Robot Programming with Mixed Reality</title>
-    
-    
-    <style>
-        body { 
-            font-family: 'Roboto', sans-serif; /* Use the new font */
-            line-height: 1.7; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 20px; 
-            background-color: #121212; /* Slightly darker background */
-            color: #e0e0e0; 
-        }
-        
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="RobAR - User-Centered Robot Programming with Mixed Reality">
+  <meta name="description" content="RobAR: user-centered, code-free industrial robot programming with Mixed Reality. Videos, papers and supplementary material from THWS.">
+  <meta name="keywords" content="Mixed Reality, Robot Programming, Human-Robot Interaction, Welding, Surface Finishing, Meta Quest 3, THWS">
+  <meta name="author" content="Tobias Kaupp, Tom Pfister, Silvio Lang, Martin Löser">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
 
-        h1 { 
-            color: #ffffff;
-            font-weight: 700; /* Bolder title */
-            margin-bottom: 8px;
-        }
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Robotik@THWS">
+  <meta property="og:title" content="RobAR - User-Centered Robot Programming with Mixed Reality">
+  <meta property="og:description" content="RobAR: user-centered, code-free industrial robot programming with Mixed Reality. Videos, papers and supplementary material from THWS.">
+  <!-- TODO: Replace with the final URL of this page -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/robar">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="RobAR - Mixed Reality Robot Programming">
 
-        h2 { 
-            color: #ffffff; 
-            font-weight: 400;
-            border-bottom: 1px solid #444; /* Underline for section titles */
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RobAR - User-Centered Robot Programming with Mixed Reality">
+  <meta name="twitter:description" content="RobAR: user-centered, code-free industrial robot programming with Mixed Reality. Videos, papers and supplementary material from THWS.">
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="RobAR - Mixed Reality Robot Programming">
 
-        a { 
-            color: #64b5f6; 
-            text-decoration: none; 
-            transition: color 0.2s ease-in-out; /* Smooth transition on hover */
-        }
-        
-        ul { 
-            list-style-type: none; 
-            padding: 0; 
-        }
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-        /* Styling for the resource links */
-        li a {
-            display: block;
-            padding: 15px;
-            background-color: #2a2a2a; /* Card background for links */
-            border-radius: 8px; /* Rounded corners */
-            margin-bottom: 10px;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-        }
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-        li a:hover { 
-            background-color: #383838; /* Darker background on hover */
-            transform: translateY(-2px); /* Slight lift effect on hover */
-            color: #82c8ff; /* Brighter link color on hover */
-            text-decoration: none;
-        }
-        
-        .contact-list li a, .partner-list li a {
-            background-color: transparent; /* Remove card style for contact and partner links */
-            padding: 5px 0;
-            margin-bottom: 0;
-        }
-        
-        .contact-list li a:hover, .partner-list li a:hover {
-            background-color: transparent;
-            transform: none;
-            text-decoration: underline;
-        }
-        
-    </style>
+
+  <title>RobAR - User-Centered Robot Programming with Mixed Reality</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ResearchProject",
+    "name": "RobAR - User-Centered Robot Programming with Mixed Reality",
+    "url": "https://YOUR_DOMAIN.com/robar",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)",
+      "url": "https://robotik.thws.de/"
+    },
+    "member": {
+      "@type": "Person",
+      "name": "Tom Pfister",
+      "email": "tom.pfister@thws.de"
+    }
+  }
+  </script>
 </head>
 <body>
-    <div class="header">
-        <h1>RobAR - User-Centered Robot Programming with Mixed Reality</h1>
-        <p>Thank you for visiting! Find here some supplementary material.</p>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Publications Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="Publications">
+      <i class="fas fa-flask"></i>
+      Publications
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>RobAR Publications</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://doi.org/10.18420/MUC2026-MCI-WS111-212" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>A User-Centered, Mixed Reality-Based Approach to Robot Programming for Surface Finishing Tasks</h5>
+            <span class="work-venue">Mensch und Computer 2026 · Duisburg</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://doi.org/10.18420/muc2025-mci-ws15-327" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Towards Mixed-Reality-Based Robot Programming for a Welding Use Case</h5>
+            <span class="work-venue">Mensch und Computer 2025 · Chemnitz</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
     </div>
+  </div>
 
-    <h2>🎥 Videos & Demos</h2>
-    <ul>
-        <li><a href="https://youtu.be/GiMknJbRXQQ" target="_blank">🎞️Watch the Video Demonstration</a></li>
-    </ul>
-    
-    <h2>📝 Papers & Preprints</h2>
-    <ul>
-        <li><a href="https://doi.org/10.18420/muc2025-mci-ws15-327" target="_blank">🧾Towards Mixed-Reality-Based Robot Programming for a Welding Use Case - Mensch und Computer 2025 - Chemnitz</a></li>
-        <li><a href="https://doi.org/10.18420/MUC2026-MCI-WS111-212" target="_blank">🧾A User-Centered, Mixed Reality-Based Approach to Robot Programming for Surface Finishing Tasks - Mensch und Computer 2026 - Duisburg</a></li>
-    </ul>
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RobAR</h1>
+            <h2 class="subtitle is-3">User-Centered Robot Programming with Mixed Reality</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Prof. Dr. Tobias Kaupp,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/tom-pfister-b4258a197/" target="_blank">Tom Pfister, M.Eng.</a>,</span>
+              <span class="author-block">Silvio Lang, M.Eng.,</span>
+              <span class="author-block">Martin Löser, Dipl.-Ing. (FH)</span>
+            </div>
 
-    <h2>🤝 Project Partner</h2>
-    <ul class="partner-list">
-        <li><a href="https://www.alpaka-innovation.de/produkte/schweisscobot/" target="_blank">🦙 Alpaka Innovation</a></li>
-    </ul>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://robotik.thws.de/" target="_blank">Robotik@THWS</a> · Technical University of Applied Sciences Würzburg-Schweinfurt</span>
+            </div>
 
-    <h2>📧 Contact</h2>
-    <ul class="contact-list">
-        <li><a href="mailto:tom.pfister@thws.de">📧 tom.pfister@thws.de</a></li>
-        <li><a href="https://www.linkedin.com/in/tom-pfister-b4258a197/" target="_blank">🌐LinkedIn</a></li>
-        <li><a href="https://robotik.thws.de/" target="_blank">🤖Robotik@THWS</a></li>
-    </ul>
-</body>
-</html>
+            <p class="is-size-6 has-text-grey mt-3">Thank you for visiting! Find here some supplementary material.</p>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://youtu.be/GiMknJbRXQQ" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://doi.org/10.18420/muc2025-mci-ws15-327" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-alt"></i>
+                    </span>
+                    <span>Paper MuC 2025</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://doi.org/10.18420/MUC2026-MCI-WS111-212" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-alt"></i>
+                    </span>
+                    <span>Paper MuC 2026</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#contact"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                    <span>Contact</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Video Demonstration</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <iframe src="https://www.youtube-nocookie.com/embed/GiMknJbRXQQ" title="RobAR video demonstration" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+<!-- Papers -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Papers &amp; Preprints</h2>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <a class="box resource-card" href="https://doi.org/10.18420/MUC2026-MCI-WS111-212" target="_blank">
+          <span class="tag is-dark mb-3">MuC 2026 · Duisburg</span>
+          <p class="title is-5">A User-Centered, Mixed Reality-Based Approach to Robot Programming for Surface Finishing Tasks</p>
+          <p class="is-size-7 has-text-grey">DOI: 10.18420/MUC2026-MCI-WS111-212 <i class="fas fa-external-link-alt ml-1"></i></p>
+        </a>
+      </div>
+      <div class="column is-half">
+        <a class="box resource-card" href="https://doi.org/10.18420/muc2025-mci-ws15-327" target="_blank">
+          <span class="tag is-dark mb-3">MuC 2025 · Chemnitz</span>
+          <p class="title is-5">Towards Mixed-Reality-Based Robot Programming for a Welding Use Case</p>
+          <p class="is-size-7 has-text-grey">DOI: 10.18420/muc2025-mci-ws15-327 <i class="fas fa-external-link-alt ml-1"></i></p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End papers -->
+
+
+<!-- Partner & Contact -->
+<section class="section has-background-light" id="contact">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column is-half">
+        <h2 class="title is-4">Project Partner</h2>
+        <ul class="link-list">
+          <li><a href="https://www.alpaka-innovation.de/produkte/schweisscobot/" target="_blank"><i class="fas fa-handshake"></i> Alpaka Innovation</a></li>
+        </ul>
+      </div>
+      <div class="column is-half">
+        <h2 class="title is-4">Contact</h2>
+        <ul class="link-list">
+          <li><a href="mailto:tom.pfister@thws.de"><i class="fas fa-envelope"></i> tom.pfister@thws.de</a></li>
+          <li><a href="https://www.linkedin.com/in/tom-pfister-b4258a197/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://robotik.thws.de/" target="_blank"><i class="fas fa-robot"></i> Robotik@THWS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End partner & contact -->
+
+  </main>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
