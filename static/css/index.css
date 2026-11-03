@@ -1,9 +1,9 @@
 /* Modern CSS Variables for consistent theming */
 :root {
-  --primary-color: #209cee;
-  --primary-hover: #0f81cc;
+  --primary-color: #c2410c;
+  --primary-hover: #9a3412;
   --secondary-color: #64748b;
-  --accent-color: #0ea5e9;
+  --accent-color: #f97316;
   --text-primary: #363636;
   --text-secondary: #4a4a4a;
   --text-light: #94a3b8;
@@ -704,6 +704,14 @@ a:focus {
 
 
 /* RobAR: paper cards and link lists */
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
 .resource-card {
   display: block;
   height: 100%;
@@ -729,8 +737,8 @@ a:focus {
 
 /* Dark mode: set by data-theme on <html> (see theme script in index.html) */
 [data-theme="dark"] {
-  --primary-color: #60a5fa;
-  --primary-hover: #93c5fd;
+  --primary-color: #fb923c;
+  --primary-hover: #fdba74;
   --text-primary: #e5e7eb;
   --text-secondary: #9ca3af;
   --text-light: #6b7280;
@@ -764,10 +772,6 @@ a:focus {
 [data-theme="dark"] .has-text-grey,
 [data-theme="dark"] .publication-authors {
   color: var(--text-secondary) !important;
-}
-
-[data-theme="dark"] a {
-  color: var(--primary-color);
 }
 
 [data-theme="dark"] .button.is-dark {
