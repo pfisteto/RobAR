@@ -811,6 +811,7 @@ a:hover {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
   width: 2.9rem;
+  height: 2.9rem;
   cursor: pointer;
   transition: var(--transition);
 }
