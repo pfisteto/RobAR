@@ -773,3 +773,102 @@ a:focus {
   margin-right: 0.4rem;
   text-align: center;
 }
+
+/* Dark mode: set by data-theme on <html> (see theme script in index.html) */
+[data-theme="dark"] {
+  --primary-color: #60a5fa;
+  --primary-hover: #93c5fd;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-light: #6b7280;
+  --background-primary: #121212;
+  --background-secondary: #1a1c20;
+  --background-accent: #24272d;
+  --border-color: #2e3238;
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] .hero:not(.is-light),
+[data-theme="dark"] .section:not(.has-background-light) {
+  background-color: var(--background-primary);
+}
+
+[data-theme="dark"] .has-background-light {
+  background-color: var(--background-secondary) !important;
+  border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .title,
+[data-theme="dark"] .work-info h5 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .subtitle,
+[data-theme="dark"] .has-text-grey,
+[data-theme="dark"] .publication-authors {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] a {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .button.is-dark {
+  background: var(--background-accent) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+[data-theme="dark"] .button.is-dark:hover {
+  background: #2563eb !important;
+}
+
+[data-theme="dark"] .box {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .resource-card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .tag.is-dark {
+  background-color: var(--background-accent);
+  color: var(--text-primary);
+}
+
+/* Theme toggle, sits next to the Publications button */
+.more-works-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  background: var(--background-primary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 2.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+.theme-toggle .icon-sun,
+[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+  display: inline;
+}
